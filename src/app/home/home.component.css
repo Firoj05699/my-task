@@ -1,0 +1,37 @@
+.form-control{
+    background-color: #d5e7e7fb;
+    border-bottom: 2px solid #5c6363;
+    box-shadow: 2px 2px 2px #5c6363;
+    border-radius: 1px;
+
+}
+
+.card{
+    box-shadow: 4px 4px 4px #484f4f;
+    border-radius: 2px;
+    border-color: #fff;
+}
+
+button{
+    border-radius: 45px;
+    font-weight: bold;
+    border-style: calc(+);
+    
+}
+
+.type{
+    margin: 10px;
+    padding: 10px;
+    background-color: #c3f0f0;
+}
+option{
+    background-color:#e6f3ee;
+    border-radius: 0px 0px 1px 1px;
+    border-color: #5c6363;
+
+}
+
+option:hover{
+    background-color: #d5e7e7fb;
+    font-weight: bold;
+}

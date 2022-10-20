@@ -1,0 +1,211 @@
+<div class="container mt-4">
+    <h3 class="badge badge-pill badge-info">
+        <h4 class="text-light">Examination Page</h4>
+    </h3>
+    <div class="row mt-3">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fa-thin fa-arrow-left"></i> Add Question</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-group mt-4">
+                        <input type="text" [(ngModel)]="title" class="form-control" placeholder="Question Title">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <select (change)="change()" [(ngModel)]="type"  class="form-control">
+                            <option>None</option>
+                            <option>Text</option>
+                            <option>Number</option>
+                            <option>Select</option>
+                            <option>Textarea</option>
+                            <option>Radio</option>
+                            <option>Checkbox</option>
+                            <option>Slider</option>
+                        </select>
+                    </div>
+
+
+                    <div [ngSwitch]="type">
+                        
+                        <!-- text -->
+                        <div  *ngSwitchCase="'Text'">
+                            <div *ngFor="let x of [].constructor(counter)">
+
+                                <div  class="row my-2">
+                                    <div class="col-md-5">
+                                        <input type="text"[(ngModel)]="text.placeholder"   placeholder="Placeholder" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="text.min"  placeholder="Min" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="text.max " placeholder="Max" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="text.rows" placeholder="Rows" class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button  *ngIf="counter>1" class="btn btn-sm btn-outline-danger" (click)="remove()">-</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- number -->
+                        <div  *ngSwitchCase="'Number'">
+                            <div *ngFor="let x of [].constructor(counter)">
+
+                                <div  class="row my-2">
+                                    <div class="col-md-5">
+                                        <input type="number" [(ngModel)]="number.placeholder" placeholder="Placeholder" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="number" [(ngModel)]="number.min " placeholder="Min" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="number" [(ngModel)]="number.max" placeholder="Max" class="form-control">
+                                    </div>
+                                    
+                                    <div class="col-md-1">
+                                        <button  *ngIf="counter>1" class="btn btn-sm btn-outline-danger" (click)="remove()">-</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <!-- select -->
+                        <div  *ngSwitchCase="'Select'">
+                            <div *ngFor="let x of [].constructor(counter)">
+
+                                <div  class="row my-2">
+                                    <div class="col-md-5">
+                                        <input type="text" [(ngModel)]="select.placeholder" placeholder="Placeholder" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="select.min " placeholder="Min" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="select.max" placeholder="Max" class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button  *ngIf="counter>1" class="btn btn-sm btn-outline-danger" (click)="remove()">-</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <!-- textarea -->
+                        <div  *ngSwitchCase="'Textarea'">
+                            <div *ngFor="let x of [].constructor(counter)">
+
+                                <div  class="row my-2">
+                                    <div class="col-md-5">
+                                        <input type="text" [(ngModel)]="textarea.placeholder" placeholder="Placeholder" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="textarea.min" placeholder="Min" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="textarea.max" placeholder="Max" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="textarea.step" placeholder="Step" class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button  *ngIf="counter>1" class="btn btn-sm btn-outline-danger" (click)="remove()">-</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- radio -->
+                        <div  *ngSwitchCase="'Radio'">
+                            <div *ngFor="let x of [].constructor(counter)">
+
+                                <div  class="row my-2">
+                                    <div class="col-md-5">
+                                        <input type="text" [(ngModel)]="radio.placeholder" placeholder="Placeholder" class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button  *ngIf="counter>1" class="btn btn-sm btn-outline-danger" (click)="remove()">-</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- checkbox -->
+                        <div  *ngSwitchCase="'Checkbox'">
+                            <div *ngFor="let x of [].constructor(counter)">
+
+                                <div  class="row my-2">
+                                    <div class="col-md-5">
+                                        <input type="text" [(ngModel)]="checkbox.placeholder" placeholder="Placeholder" class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button class="btn btn-sm btn-outline-danger" (click)="remove()">-</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- slider -->
+                        <div  *ngSwitchCase="'Slider'">
+                            <div *ngFor="let x of [].constructor(counter)">
+
+                                <div  class="row my-2">
+                                    <div class="col-md-5">
+                                        <input type="text" [(ngModel)]="slider.placeholder" placeholder="Placeholder" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="slider.min" placeholder="Min" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" [(ngModel)]="slider.max" placeholder="Max" class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button *ngIf="counter>1" class="btn btn-sm btn-outline-danger" (click)="remove()">-</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="type!='None'">
+                            <div class="col-md-1 offset-md-11">
+                                <button class="btn btn-sm btn-outline-success" (click)="addMore()">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="card-footer">
+                    <input type="submit" (click)="submit()" value="Submit" class="btn btn-success">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>      
